@@ -74,7 +74,7 @@ namespace ClearSky
                     anim.SetBool("isRun", true);
 
             }
-            transform.position += moveVelocity * movePower * Time.deltaTime;
+            transform.position += moveVelocity * movePower * Time.deltaTime * 0.5f;
         }
         void Jump()
         {
