@@ -140,15 +140,17 @@ public class DisplayData : MonoBehaviour
 		GameObject Nearest = DestObjects[0];
 
 		float ShortestDistance = Vector3.Distance(Source.transform.position, DestObjects[0].transform.position);
+		int i = 0;
 		foreach(GameObject obj in DestObjects)
         {
 			float Distance = Vector3.Distance(Source.transform.position, obj.transform.position);
-			Debug.Log(Distance);
+			Debug.Log ("obj["+i+"]"+Distance);
 			if(Distance < ShortestDistance)
             {
 				Nearest = obj;
 				ShortestDistance = Distance;
             }
+			i++;
 		}
 		return Nearest;
     }
