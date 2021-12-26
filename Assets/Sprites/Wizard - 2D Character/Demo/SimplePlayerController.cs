@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace ClearSky
 {
@@ -39,7 +41,15 @@ namespace ClearSky
                 Attack();
                 Jump();
                 Run();
+            }
+        }
 
+        void attention(int value)
+        {
+
+            if (value == 1000)
+            {
+                transform.position = Vector3.MoveTowards(gameObject.transform.position, new Vector3(13, 0, 0), 0.1f);
             }
         }
         private void OnTriggerEnter2D(Collider2D other)
