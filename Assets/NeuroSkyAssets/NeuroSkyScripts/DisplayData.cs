@@ -17,7 +17,12 @@ public class DisplayData : MonoBehaviour
 	
 	private float delta;
 
-	private GameObject target;
+	public GameObject player;
+	public GameObject[] targets;
+	public GameObject target;
+
+	public int ad = 20;
+	public int md = 80;
 
     void Start()
     {
@@ -52,10 +57,10 @@ public class DisplayData : MonoBehaviour
 		attention1 = value;
         if (target != null)
         {
-			if(attention1 >= 50 && meditation1 < 50)
+			if(attention1 >= ad && meditation1 < md)
 			{
 				target.SendMessage("attention", 1000);
-			} else if(attention1 >= 50 && meditation1 >= 50)
+			} else if(attention1 >= ad && meditation1 >= md)
 			{
 				target.SendMessage("attention", 1001);
 			}
@@ -66,11 +71,11 @@ public class DisplayData : MonoBehaviour
 		meditation1 = value;
 		if (target != null)
 		{
-			if (attention1 < 50 && meditation1 >= 50)
+			if (attention1 < ad && meditation1 >= md)
 			{
 				target.SendMessage("meditation", 1002);
 			}
-			else if (attention1 < 50 && meditation1 < 50)
+			else if (attention1 < ad && meditation1 < md)
 			{
 				target.SendMessage("meditation", 1003);
 			}
@@ -78,12 +83,17 @@ public class DisplayData : MonoBehaviour
 	}
 	void OnUpdateDelta(float value){
 		delta = value;
-		//플레이어에게 가까이 있는 오브젝트 선택
 	}
 	void OnUpdateBlink(int value)
     {
 		blink = value;
-    }
+		//플레이어에게 가까이 있는 오브젝트 선택
+		if(blink > 60)
+        {
+			target = GetNearestGameObject(player, targets);
+        }
+		
+	}
 
 
     void OnGUI()
@@ -124,4 +134,22 @@ public class DisplayData : MonoBehaviour
 		GUILayout.Label("Blink: " + blink);
 
 	}
+
+	GameObject GetNearestGameObject(GameObject Source, GameObject[] DestObjects)
+    {
+		GameObject Nearest = DestObjects[0];
+
+		float ShortestDistance = Vector3.Distance(Source.transform.position, DestObjects[0].transform.position);
+		foreach(GameObject obj in DestObjects)
+        {
+			float Distance = Vector3.Distance(Source.transform.position, obj.transform.position);
+			Debug.Log(Distance);
+			if(Distance < ShortestDistance)
+            {
+				Nearest = obj;
+				ShortestDistance = Distance;
+            }
+		}
+		return Nearest;
+    }
 }
