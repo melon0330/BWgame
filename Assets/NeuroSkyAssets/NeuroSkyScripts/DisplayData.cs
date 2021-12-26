@@ -60,7 +60,7 @@ public class DisplayData : MonoBehaviour
 			if(attention1 >= ad && meditation1 < md)
 			{
 				target.SendMessage("attention", 1000);
-			} else if(attention1 >= ad && meditation1 >= md)
+			} else if(attention1 < ad && meditation1 >= md)
 			{
 				target.SendMessage("attention", 1001);
 			}
@@ -71,7 +71,7 @@ public class DisplayData : MonoBehaviour
 		meditation1 = value;
 		if (target != null)
 		{
-			if (attention1 < ad && meditation1 >= md)
+			if (attention1 >= ad && meditation1 >= md)
 			{
 				target.SendMessage("meditation", 1002);
 			}

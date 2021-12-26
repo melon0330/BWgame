@@ -6,6 +6,7 @@ namespace ClearSky
     {
         public float movePower = 10f;
         public float jumpPower = 15f; //Set Gravity Scale in Rigidbody2D Component to 5
+        private bool a = false;
 
         private Rigidbody2D rb;
         private Animator anim;
@@ -146,11 +147,18 @@ namespace ClearSky
             
             if(collision.gameObject.tag == "AcBuStone")
             {
-                TpPlatform.SetActive(true);
+                a = true;
             }
            
                
 
+        }
+        void create()
+        {
+            if (a)
+            {
+                TpPlatform.SetActive(true);
+            }
         }
         
     }

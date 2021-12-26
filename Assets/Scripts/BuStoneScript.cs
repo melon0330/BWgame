@@ -5,17 +5,17 @@ using UnityEngine;
 public class BuStoneScript : MonoBehaviour
 {
     public GameObject Wall1;
-    int a = 0;
+    bool a = false;
     void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            a = +1;
+            a = true;
         }
     }
-    void attention(int value)
+    void open()
     {
-        if (value == 1002 && a == 1)
+        if (a)
         {
             Wall1.SetActive(false);
         }
