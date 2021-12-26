@@ -1245,6 +1245,7 @@ GameObject:
   - component: {fileID: 434162211}
   - component: {fileID: 434162210}
   - component: {fileID: 434162212}
+  - component: {fileID: 434162213}
   m_Layer: 6
   m_Name: platform1
   m_TagString: MovementPlatform
@@ -1552,6 +1553,18 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &434162213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434162208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a11a1111a43598847b9288c8570feb0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &438128473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2539,6 +2552,63 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1001 &661118018
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 9d81581e234f2fd4f8e2594031cc19fe, type: 3}
+      propertyPath: m_Name
+      value: NeuroSkyTGCController
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9d81581e234f2fd4f8e2594031cc19fe, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9d81581e234f2fd4f8e2594031cc19fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9d81581e234f2fd4f8e2594031cc19fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9d81581e234f2fd4f8e2594031cc19fe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9d81581e234f2fd4f8e2594031cc19fe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9d81581e234f2fd4f8e2594031cc19fe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9d81581e234f2fd4f8e2594031cc19fe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9d81581e234f2fd4f8e2594031cc19fe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9d81581e234f2fd4f8e2594031cc19fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9d81581e234f2fd4f8e2594031cc19fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9d81581e234f2fd4f8e2594031cc19fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9d81581e234f2fd4f8e2594031cc19fe, type: 3}
 --- !u!1 &746474927
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,6 +2621,7 @@ GameObject:
   - component: {fileID: 746474929}
   - component: {fileID: 746474928}
   - component: {fileID: 746474931}
+  - component: {fileID: 746474932}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2588,7 +2659,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 0.8
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -2636,6 +2707,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1696880075}
+--- !u!114 &746474932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746474927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e26b7fbf0c3739b41a4ca9a1c7d6d95e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signalIcons:
+  - {fileID: 2800000, guid: 987680db3613cf14383bcd6662d3edd4, type: 3}
+  - {fileID: 2800000, guid: 2cd1c6d681d809b4fb05a6b55520d5f3, type: 3}
+  - {fileID: 2800000, guid: 636d2f47b7cc777458262e416e802458, type: 3}
+  - {fileID: 2800000, guid: 2d67b5f04bd3c714794a7ea96084ca1f, type: 3}
+  - {fileID: 2800000, guid: c7ed482e000e8e84f95fb8e464b4afe9, type: 3}
+  player: {fileID: 1696880075}
+  targets:
+  - {fileID: 434162208}
+  - {fileID: 557608988}
+  - {fileID: 2083316726}
+  - {fileID: 230200423}
+  - {fileID: 438128473}
+  target: {fileID: 0}
+  ad: 20
+  md: 80
 --- !u!1 &1235243550
 GameObject:
   m_ObjectHideFlags: 0
