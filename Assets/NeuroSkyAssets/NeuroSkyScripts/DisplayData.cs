@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UIElements;
 
 public class DisplayData : MonoBehaviour
 {
@@ -29,8 +30,9 @@ public class DisplayData : MonoBehaviour
 		controller.UpdateBlinkEvent += OnUpdateBlink;
 
 		controller.UpdateDeltaEvent += OnUpdateDelta;
-		
-    }
+		controller.Disconnect();
+		indexSignalIcons = 1;
+	}
 	
 	void OnUpdatePoorSignal(int value){
 		poorSignal1 = value;
@@ -87,29 +89,39 @@ public class DisplayData : MonoBehaviour
     void OnGUI()
     {
 		GUILayout.BeginHorizontal();
-		
-		
-        if (GUILayout.Button("Connect"))
-        {
-            controller.Connect();
-        }
-        if (GUILayout.Button("DisConnect"))
-        {
-            controller.Disconnect();
+
+
+		if (GUILayout.Button("Connect"))
+		{
+			controller.Connect();
+		}
+		if (GUILayout.Button("DisConnect"))
+		{
+			controller.Disconnect();
 			indexSignalIcons = 1;
-        }
-		
-		GUILayout.Space(Screen.width-250);
+		}
+
+		if (Input.GetKeyDown(KeyCode.Z))
+		{
+			controller.Connect();
+		}
+		if (Input.GetKeyUp(KeyCode.Z))
+		{
+			controller.Disconnect();
+			indexSignalIcons = 1;
+		}
+
+		GUILayout.Space(Screen.width - 250);
 		GUILayout.Label(signalIcons[indexSignalIcons]);
-		
+
 		GUILayout.EndHorizontal();
 
-		
-        GUILayout.Label("PoorSignal1:" + poorSignal1);
-        GUILayout.Label("Attention1:" + attention1);
-        GUILayout.Label("Meditation1:" + meditation1);
+
+		GUILayout.Label("PoorSignal1:" + poorSignal1);
+		GUILayout.Label("Attention1:" + attention1);
+		GUILayout.Label("Meditation1:" + meditation1);
 		GUILayout.Label("Delta:" + delta);
 		GUILayout.Label("Blink: " + blink);
 
-    }
+	}
 }
