@@ -12,8 +12,11 @@ public class DisplayData : MonoBehaviour
     private int poorSignal1;
     private int attention1;
     private int meditation1;
+	private int blink;
 	
 	private float delta;
+
+	private GameObject target;
 
     void Start()
     {
@@ -23,7 +26,8 @@ public class DisplayData : MonoBehaviour
 		controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
 		controller.UpdateAttentionEvent += OnUpdateAttention;
 		controller.UpdateMeditationEvent += OnUpdateMeditation;
-		
+		controller.UpdateBlinkEvent += OnUpdateBlink;
+
 		controller.UpdateDeltaEvent += OnUpdateDelta;
 		
     }
@@ -44,13 +48,40 @@ public class DisplayData : MonoBehaviour
 	}
 	void OnUpdateAttention(int value){
 		attention1 = value;
+        if (target != null)
+        {
+			if(attention1 >= 50 && meditation1 < 50)
+			{
+				target.SendMessage("attention", 1000);
+			} else if(attention1 >= 50 && meditation1 >= 50)
+			{
+				target.SendMessage("attention", 1001);
+			}
+        }
+		
 	}
 	void OnUpdateMeditation(int value){
 		meditation1 = value;
+		if (target != null)
+		{
+			if (attention1 < 50 && meditation1 >= 50)
+			{
+				target.SendMessage("meditation", 1002);
+			}
+			else if (attention1 < 50 && meditation1 < 50)
+			{
+				target.SendMessage("meditation", 1003);
+			}
+		}
 	}
 	void OnUpdateDelta(float value){
 		delta = value;
+		//플레이어에게 가까이 있는 오브젝트 선택
 	}
+	void OnUpdateBlink(int value)
+    {
+		blink = value;
+    }
 
 
     void OnGUI()
@@ -78,6 +109,7 @@ public class DisplayData : MonoBehaviour
         GUILayout.Label("Attention1:" + attention1);
         GUILayout.Label("Meditation1:" + meditation1);
 		GUILayout.Label("Delta:" + delta);
+		GUILayout.Label("Blink: " + blink);
 
     }
 }
