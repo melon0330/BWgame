@@ -985,6 +985,7 @@ GameObject:
   - component: {fileID: 230200425}
   - component: {fileID: 230200428}
   - component: {fileID: 230200427}
+  - component: {fileID: 230200429}
   m_Layer: 6
   m_Name: stone4
   m_TagString: BuStone3
@@ -1233,6 +1234,19 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &230200429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230200423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03be7298376368340a7ad84ef3909065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Wall3: {fileID: 457986650}
 --- !u!1 &434162208
 GameObject:
   m_ObjectHideFlags: 0
@@ -2304,6 +2318,7 @@ GameObject:
   - component: {fileID: 557608990}
   - component: {fileID: 557608993}
   - component: {fileID: 557608992}
+  - component: {fileID: 557608994}
   m_Layer: 6
   m_Name: stone2
   m_TagString: BuStone1
@@ -2552,6 +2567,19 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &557608994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557608988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4ed1a627f70b7469fe3aa071f20469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Wall1: {fileID: 1419702123}
 --- !u!1001 &661118018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59425,6 +59453,7 @@ GameObject:
   - component: {fileID: 2083316728}
   - component: {fileID: 2083316731}
   - component: {fileID: 2083316730}
+  - component: {fileID: 2083316732}
   m_Layer: 6
   m_Name: stone3
   m_TagString: BuStone2
@@ -59673,3 +59702,16 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &2083316732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083316726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94fb377d16c7e4043b2eba3735400863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Wall2: {fileID: 1521820684}
