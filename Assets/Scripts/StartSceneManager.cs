@@ -7,7 +7,7 @@ public class StartSceneManager : MonoBehaviour
 {
     public void GoGameScene()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("Stage1");
     }
     public void Close()
     {
