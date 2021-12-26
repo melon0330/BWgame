@@ -3,15 +3,26 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Spike
+  - TpStone
+  - BuStone1
+  - BuStone2
+  - BuStone3
+  - Wall1
+  - Wall2
+  - Wall3
+  - TpPlatform
+  - MovementPlatform
+  - AcBuStone
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Object
   - 
   - 
   - 

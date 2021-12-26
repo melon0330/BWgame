@@ -14,6 +14,13 @@ namespace ClearSky
         bool isJumping = false;
         private bool alive = true;
 
+        public GameObject Wall1;
+        public GameObject Wall2;
+        public GameObject Wall3;
+        public GameObject TpPlatform;
+        public float speed;
+
+
 
         // Start is called before the first frame update
         void Start()
@@ -123,5 +130,44 @@ namespace ClearSky
                 alive = true;
             }
         }
+        void OnTriggerStay2D(Collider2D collision)
+        {
+            if(collision.gameObject.tag == "Spike")
+            {
+                transform.position = new Vector3(-2, 0, 0);
+            }
+            if(collision.gameObject.tag == "TpStone")
+            {
+                transform.position = new Vector3(11, 11, 0);
+            }
+            if(collision.gameObject.tag == "BuStone1")
+            {
+                Wall1.SetActive(false);
+            }
+            if (collision.gameObject.tag == "BuStone2")
+            {
+                Wall2.SetActive(false);
+            }
+            if (collision.gameObject.tag == "BuStone3")
+            {
+                Wall3.SetActive(false);
+            }
+            if (collision.gameObject.tag == "TpPlatform")
+            {
+                transform.position = new Vector3(-13, 8.5f, 0);
+            }
+            if (collision.gameObject.tag == "MovementPlatform")
+            {
+
+            }
+            if(collision.gameObject.tag == "AcBuStone")
+            {
+                TpPlatform.SetActive(true);
+            }
+           
+               
+
+        }
+        
     }
 }
